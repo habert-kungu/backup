@@ -1,0 +1,69 @@
+return {
+  {
+    "stevearc/conform.nvim",
+    event = "BufWritePre", -- uncomment for format on save
+    config = function()
+      require "configs.conform"
+    end,
+  },
+
+  -- These are some examples, uncomment them if you want to see them work!
+  {
+    "neovim/nvim-lspconfig",
+    config = function()
+      require("nvchad.configs.lspconfig").defaults()
+      require "configs.lspconfig"
+    end,
+  },
+  --Mason
+  {
+    "williamboman/mason.nvim",
+    oopts = {
+      eensure_installed = {
+        "lua-language-server",
+        "stylua",
+        "html-lsp",
+        "css-lsp",
+        "pyright",
+        "black",
+        "debugpy",
+        "mypy",
+        "ruff",
+        "pyright",
+        "eslint-lsp",
+        "prettierd",
+        "tailwindcss-language-server",
+        "typescript-language-server",
+      },
+    },
+  },
+  --treesitter
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    opts = {
+      indent = { enable = true },
+      highlight = { enable = true },
+      auto_install = true,
+    },
+  },
+  {
+    "kmontocam/nvim-conda",
+    dependencies = { "nvim-lua/plenary.nvim" },
+  },
+  --nvim-lint for linting
+  {
+    "nvimtools/none-ls.nvim",
+    event = "VeryLazy",
+    opts = function()
+      return require "configs.null-ls"
+    end,
+  },
+  {
+    "windwp/nvim-ts-autotag",
+    ft = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end,
+  },
+}
