@@ -18,8 +18,8 @@ return {
   --Mason
   {
     "williamboman/mason.nvim",
-    oopts = {
-      eensure_installed = {
+    opts = {
+      ensure_installed = {
         "lua-language-server",
         "stylua",
         "html-lsp",
