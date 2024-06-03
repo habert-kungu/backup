@@ -29,6 +29,7 @@ return {
         "debugpy",
         "mypy",
         "ruff",
+        "ruff-lsp",
         "pyright",
         "eslint-lsp",
         "prettierd",
@@ -83,4 +84,16 @@ return {
       { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
     },
   },
+  -- Setup your plugins using your preferred plugin manager
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {},
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    },
+  },
 }
+
+-- You can place this code in an appropriate place to execute after the plugin is loaded
