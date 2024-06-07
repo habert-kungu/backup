@@ -31,6 +31,8 @@ return {
         "ruff",
         "ruff-lsp",
         "pyright",
+        "clangd",
+        "clang-format",
         "eslint-lsp",
         "prettierd",
         "tailwindcss-language-server",
@@ -94,6 +96,18 @@ return {
       "rcarriga/nvim-notify",
     },
   },
+}, {
+  "vhyrro/luarocks.nvim",
+  priority = 1001,
+  opts = {
+    rocks = { "magick" },
+  },
+}, {
+  "3rd/image.nvim",
+  dependencies = { "luarocks" }, -- Assuming luarocks package
+  config = function()
+    -- Your configuration code here
+  end,
 }
 
 -- You can place this code in an appropriate place to execute after the plugin is loaded
