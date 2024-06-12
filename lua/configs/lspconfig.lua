@@ -5,7 +5,6 @@ local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
 local servers = { "html", "cssls", "ruff_lsp", "pyright", "tsserver", "eslint" }
-
 -- lsps with default config
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -15,6 +14,14 @@ for _, lsp in ipairs(servers) do
   }
 end
 
+lspconfig.html.setup {
+  opts = {
+    root_dir = function(fname)
+      return require("lspconfig").util.root_pattern ".git"(fname) or require("lspconfig").util.path.dirname(fname)
+    end,
+    filetypes = { "html", "htmldjango" },
+  },
+}
 -- typescript
 lspconfig.tsserver.setup {
   on_attach = on_attach,

@@ -87,27 +87,25 @@ return {
     },
   },
   -- Setup your plugins using your preferred plugin manager
-  {
-    "folke/noice.nvim",
-    event = "VeryLazy",
-    opts = {},
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-      "rcarriga/nvim-notify",
-    },
-  },
-}, {
-  "vhyrro/luarocks.nvim",
-  priority = 1001,
-  opts = {
-    rocks = { "magick" },
-  },
-}, {
-  "3rd/image.nvim",
-  dependencies = { "luarocks" }, -- Assuming luarocks package
-  config = function()
-    -- Your configuration code here
-  end,
+--   {
+--     "folke/noice.nvim",
+--     event = "VeryLazy",
+--     opts = {},
+--     dependencies = {
+--       "MunifTanjim/nui.nvim",
+--       "rcarriga/nvim-notify",
+--     },
+--   },
+-- }, {
+--   "vhyrro/luarocks.nvim",
+--   priority = 1001,
+--   opts = {
+--     rocks = { "magick" },
+--   },
+-- }, {
+--   "3rd/image.nvim",
+--   dependencies = { "luarocks" }, -- Assuming luarocks package
+--   config = function()
+--     -- Your configuration code here
+--   end,
 }
-
--- You can place this code in an appropriate place to execute after the plugin is loaded
